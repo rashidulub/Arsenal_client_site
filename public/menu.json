@@ -22,6 +22,7 @@
         "instructor": "Mr. Jacks Phero",
         "image": "https://media.gettyimages.com/id/1276613883/photo/montage-of-cricket-players-hitting-cricket-balls-in-outdoor-stadium.jpg?s=612x612&w=gi&k=20&c=t7Zg-d9byPbRPwI2fsHUwotVrMI9Xu5Nr0NmGjfNODY=",
         "category": "popular_class",
+        "imageIns": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWZ7OqO3IGa0N6MwB__iRp1QakIDxdq90NYQ&usqp=CAU",
         "price": 14.5
     },
     {
@@ -40,6 +41,7 @@
        
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1iM67PKdIuX5NeXwacVknOB2DzYZ0MMPtkAoy12L5H54QVdwqzpE4SNoVDId8WHpLWNA&usqp=CAU",
         "category": "popular_class",
+        "imageIns": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-4nzSTP_wrg38c2xEkWqRhKbcmYuyLOYtmQ&usqp=CAU",
         "price": 14.5
     },
     {
@@ -49,6 +51,8 @@
         "instructor": "Rocklencer",
         "image": "https://img.olympicchannel.com/images/image/private/t_social_share_thumb/f_auto/v1536936974/primary/exvzqcvorticinejmmel",
         "category": "popular_class",
+        
+        "imageIns": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJarvd6yizHwqvBLYR3P3BENoqKE-YpbRMggL9EBufj3QKh7za5mz9NXh49lNAAs1gY1E&usqp=CAU",
         "price": 12.5
     },
     {
@@ -58,6 +62,7 @@
         "instructor": "weiliem",
         "image": "https://www.repstatic.it/content/nazionale/img/2023/03/11/215645220-a3856fc3-7081-45f1-ae8c-9796cdf9abe0.jpg",
         "category": "popular_class",
+        "imageIns": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAxX_6jPgOPvTVof6gw3FcAuaCNrufeF81pXV5DsQ0Qroiz-gqbd9G29x4PC55G5-N2p0&usqp=CAU",
         "price": 12.5
     },
     {
@@ -163,6 +168,7 @@
         "instructor": "Dhirandra",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Carter_vs_Gasol%2C_Lakers_vs_Magic.jpg/640px-Carter_vs_Gasol%2C_Lakers_vs_Magic.jpg",
         "category": "popular_class",
+        "imageIns": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTld289kN9_esUK-pArR1qc54U_KXtoq3ZuxWwf5XYvk6cBb3N_aqwha8v5iS2FHHhfD-E&usqp=CAU",
         "price": 14.5
     },
     {
@@ -276,6 +282,7 @@
         "instructor": "Jecsion",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Golfer_swing.jpg/1200px-Golfer_swing.jpg",
         "category": "popular_class",
+        "imageIns": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlDKe45vxP2Xgtjp3yNG3nlzP-AqeA-VRlMw&usqp=CAU",
         "price": 14.5
     },
     {
