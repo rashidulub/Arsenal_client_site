@@ -1,12 +1,13 @@
 import React from 'react';
+import logof from '../../../assets/Home/logo2.png'
 
 const Footer = () => {
     return (
         <footer>
             <div className="footer p-10 bg-neutral text-neutral-content">
                 <div>
-                   <img src="" alt="" />
-                    <p>Toy MarketPlace Ltd.<br />Providing reliable tech since 1992</p>
+                <img className='w-24 rounded-full' src={logof} alt="" />
+                    <p>Arsenal Sports Club Ltd.<br />Providing reliable tech since 1992</p>
                 </div>
                 <div>
                     <span className="footer-title">Social</span>

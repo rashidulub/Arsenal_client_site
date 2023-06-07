@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../../assets/Home/logo1.jpg'
 
 const Navbar = () => {
     return (
         <div>
-        <div className="navbar   bg-opacity-75 max-w-screen-xl bg-neutral text-neutral-content">
+        <div className="navbar fixed z-10   bg-opacity-50 text-white max-w-screen-xl bg-neutral ">
           <div className="navbar-start">
             <div className="dropdown">
               <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -18,8 +19,8 @@ const Navbar = () => {
                 <li><Link to='/login'>Login</Link></li>
               </ul>
             </div>
-            <img src="" alt="" />
-            <a className="btn btn-ghost normal-case text-xl">SEGREX</a>
+            <img className="w-12 rounded-full mr-0" src={logo} alt="" />
+            <a className="btn btn-ghost normal-case text-3xl">Arsenal</a>
           </div>
           <div className="navbar-center  hidden lg:flex">
             <ul className="menu menu-horizontal  px-1">
