@@ -34,25 +34,29 @@
     },
     {
         "_id": "642c155b2c4774f05c36ee7a",
-        "name": "Roast Duck Breast",
-        "recipe": "Roasted duck breast (served pink) with gratin potato and a griottine cherry sauce",
+        "name": "FootBall",
+        "enroll": 365,
+        "instructor": "Emiliano Martinaz",
+       
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1iM67PKdIuX5NeXwacVknOB2DzYZ0MMPtkAoy12L5H54QVdwqzpE4SNoVDId8WHpLWNA&usqp=CAU",
         "category": "popular_class",
         "price": 14.5
     },
     {
         "_id": "642c155b2c4774f05c36ee8c",
-        "name": "Escalope de Veau",
-        "recipe": "Pan roasted haddock fillet wrapped in smoked French bacon with pea purée and tomato and chive vinaigrette",
-        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-370x247.jpg",
+        "name": "Volleyball",
+        "enroll": 202,
+        "instructor": "Rocklencer",
+        "image": "https://img.olympicchannel.com/images/image/private/t_social_share_thumb/f_auto/v1536936974/primary/exvzqcvorticinejmmel",
         "category": "popular_class",
         "price": 12.5
     },
     {
         "_id": "642c155b2c4774f05c36ee94",
-        "name": "Escalope de Veau",
-        "recipe": "Pan roasted haddock fillet wrapped in smoked French bacon with pea purée and tomato and chive vinaigrette",
-        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-370x247.jpg",
+        "name": "Tennis",
+        "enroll": 135,
+        "instructor": "weiliem",
+        "image": "https://www.repstatic.it/content/nazionale/img/2023/03/11/215645220-a3856fc3-7081-45f1-ae8c-9796cdf9abe0.jpg",
         "category": "popular_class",
         "price": 12.5
     },
@@ -154,9 +158,10 @@
     },
     {
         "_id": "642c155b2c4774f05c36ee7f",
-        "name": "Roasted Pork Belly",
-        "recipe": "Roasted duck breast (served pink) with gratin potato and a griottine cherry sauce",
-        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-370x247.jpg",
+        "name": "Basketball",
+        "enroll": 85,
+        "instructor": "Dhirandra",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Carter_vs_Gasol%2C_Lakers_vs_Magic.jpg/640px-Carter_vs_Gasol%2C_Lakers_vs_Magic.jpg",
         "category": "popular_class",
         "price": 14.5
     },
@@ -266,9 +271,10 @@
     },
     {
         "_id": "642c155b2c4774f05c36ee7e",
-        "name": "Fish Parmentier",
-        "recipe": "Roasted duck breast (served pink) with gratin potato and a griottine cherry sauce",
-        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-5-370x247.jpg",
+        "name": "Golf",
+        "enroll": 120,
+        "instructor": "Jecsion",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Golfer_swing.jpg/1200px-Golfer_swing.jpg",
         "category": "popular_class",
         "price": 14.5
     },
