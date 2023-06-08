@@ -74,17 +74,33 @@ const SignUp = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="text" name='password' {...register("password",{ required: true })} placeholder="password" className="input input-bordered" />
-                                {errors.password && <span className='text-white bg-orange-600 text-center'>Password is required</span>}
+                                <input type="password"  {...register("password", {
+                                    required: true,
+                                    minLength: 6,
+                                    maxLength: 20,
+                                    pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
+                                })} placeholder="password" className="input input-bordered" />
+                                {errors.password?.type === 'required' && <p className="text-red-600">Password is required</p>}
+                                {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
+                                {errors.password?.type === 'maxLength' && <p className="text-red-600">Password must be less than 20 characters</p>}
+                                {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have one Uppercase one lower case, one number and one special character.</p>}
                                
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Confirm Password</span>
                                 </label>
-                                <input type="text" name='password' {...register("password",{ required: true },{ required: true, maxLength: 20 })} placeholder="password" className="input input-bordered" />
-                                {errors.password && <span className='text-white bg-orange-600 text-center'>Password is required</span>}
-                               
+                                <input type="password"  {...register("password", {
+                                    required: true,
+                                    minLength: 6,
+                                    maxLength: 20,
+                                    pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
+                                })} placeholder="password" className="input input-bordered" />
+                                {errors.password?.type === 'required' && <p className="text-red-600">Password is required</p>}
+                                {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
+                                {errors.password?.type === 'maxLength' && <p className="text-red-600">Password must be less than 20 characters</p>}
+                                {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have one Uppercase one lower case, one number and one special character.</p>}
+                                
                             </div>
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary" type="submit" value="Sign Up" />
