@@ -23,7 +23,7 @@ const Navbar = () => {
               <ul tabIndex={0} className="menu menu-compact text-black dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                 <li><Link  to='/'>Home</Link></li>
                 <li ><Link to='/instructor'>Instructor</Link></li>
-                <li ><Link to='/mytoy'>My Toys</Link></li>
+                <li > <Link className="mr-5" to='/classes'>Classes</Link></li>
                 <li ><Link to='/addtoy'>Add Toy</Link></li>
                 <li><Link to='/login'>Login</Link></li>
               </ul>
@@ -35,6 +35,7 @@ const Navbar = () => {
             <ul className="menu menu-horizontal  px-1">
               <Link className="mr-5" to='/'>Home</Link>
               <Link className="mr-5" to='/instructor'>Instructor</Link>
+              <Link className="mr-5" to='/classes'>Classes</Link>
            
                 
                 <p>
@@ -57,7 +58,7 @@ const Navbar = () => {
             
              {
                user ? <>
-               <button type="submit" onClick={handleLogout} className="btn mr-5 ">Logout</button> <p>{user?.displayName}</p>   </> : 
+               <button type="submit" onClick={handleLogout} className="btn mr-5 ">Logout</button> <img className='w-16 rounded-full' src={user?.photoURL} alt="" />   </> : 
                <>
                <Link className="mr-5" to='/login'><button type="submit" className="btn ">Login</button></Link>
                </>
