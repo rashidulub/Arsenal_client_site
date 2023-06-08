@@ -4,6 +4,7 @@ import { getAuth } from 'firebase/auth';
 import { app } from '../../Fairbase/Firebase.config';
 import { useContext } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Login = () => {
     const auth = getAuth(app)
@@ -27,6 +28,15 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                Swal.fire({
+                    title: 'User Login Successful.',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                });
                 navigate(from , {replace: true})
             })
             .catch(error => console.log(error));

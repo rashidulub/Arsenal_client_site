@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/Home/logo1.jpg'
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Navbar = () => {
+  const {user ,LogOut}  = useContext(AuthContext)
+
+  const handleLogout = ()=>{
+    LogOut()
+    .then(()=>{})
+    .catch(error =>console.log(error))
+
+  }
     return (
         <div>
         <div className="navbar    bg-opacity-50 text-white max-w-screen-xl bg-neutral ">
@@ -35,7 +44,9 @@ const Navbar = () => {
                   
                 </p>
                   
-             
+             {/* {
+               user ? <></> : <></>
+             } */}
              
             </ul>
           </div>
@@ -43,7 +54,14 @@ const Navbar = () => {
        
              {/* <button  type="submit" className="btn ">LogOut</button> */}
              
-             <Link className="mr-5" to='/login'><button type="submit" className="btn ">Login</button></Link>
+            
+             {
+               user ? <>
+               <button type="submit" onClick={handleLogout} className="btn mr-5 ">Logout</button></> : 
+               <>
+               <Link className="mr-5" to='/login'><button type="submit" className="btn ">Login</button></Link>
+               </>
+             }
   
             
           </div>
