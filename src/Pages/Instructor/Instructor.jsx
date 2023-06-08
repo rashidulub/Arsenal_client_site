@@ -3,7 +3,7 @@ import InstructorCard from '../InstructorCard/InstructorCard';
 const Instructor = () => {
   const [menu, setMenu] = useState([]);
   useEffect(()=>{
-     fetch('menu.json')
+     fetch('http://localhost:5000/menu')
      .then(res=>res.json())
      .then(data=> {
          const PopularInstructor =data.filter(item=>item.category ==='popular_class');
