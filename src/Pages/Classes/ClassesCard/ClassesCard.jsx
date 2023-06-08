@@ -7,7 +7,7 @@ const ClassesCard = ({ item }) => {
 
     const { name, image, instructor, enroll, price, sit, _id } = item
     const { user } = useContext(AuthContext)
-   
+    
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -26,11 +26,11 @@ const ClassesCard = ({ item }) => {
             .then(res => res.json())
             .then(data => {
                 if(data.insertedId){
-                    refetch(); // refetch cart to update the number of items in the cart
+                  
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Food added on the cart.',
+                        title: 'Class on the cart.',
                         showConfirmButton: false,
                         timer: 1500
                       })
@@ -39,7 +39,7 @@ const ClassesCard = ({ item }) => {
         }
         else{
             Swal.fire({
-                title: 'Please login to order the food',
+                title: 'Please login to Add class',
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
