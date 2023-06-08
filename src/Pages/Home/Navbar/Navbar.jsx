@@ -57,7 +57,7 @@ const Navbar = () => {
             
              {
                user ? <>
-               <button type="submit" onClick={handleLogout} className="btn mr-5 ">Logout</button></> : 
+               <button type="submit" onClick={handleLogout} className="btn mr-5 ">Logout</button> <p>{user?.displayName}</p>   </> : 
                <>
                <Link className="mr-5" to='/login'><button type="submit" className="btn ">Login</button></Link>
                </>

@@ -3,13 +3,15 @@ import { Link, useNavigate } from 'react-router-dom';
 import img from '../../assets/slider/slider5.png'
 import { AuthContext } from '../Provider/AuthProvider';
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
 
 
 
 const SignUp = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit,reset, formState: { errors } } = useForm();
     
-    const {createUser} = useContext(AuthContext)
+    const {createUser,updateUserProfile} = useContext(AuthContext)
+    const navigate = useNavigate();
 
 
     const onSubmit = data => {
@@ -19,33 +21,41 @@ const SignUp = () => {
 
             const loggedUser = result.user;
             console.log(loggedUser);
+
+            
+            updateUserProfile(data.name, data.photoURL)
+            .then(() => {
+                const saveUser = { name: data.name, email: data.email }
+                
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.insertedId) {
+                            reset();
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'User created successfully.',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                            navigate('/');
+                        }
+                    })
+
+
+
+            })
+            .catch(error => console.log(error))
+
+
         }) 
     }
 
 
-    const navigate = useNavigate()
+   
 
 
-    // const { createUser } = useContext(AuthContext);
-
-    // const handleSignUp = event => {
-    //     event.preventDefault();
-    //     const form = event.target;
-    //     const name = form.name.value;
-    //     const email = form.email.value;
-    //     const password = form.password.value;
-    //     console.log(name, email, password)
-
-    //     createUser(email, password)
-    //         .then(result => {
-    //             const user = result.user;
-    //             console.log(user)
-    //             navigate('/')
-    //         })
-    //         .catch(error => console.log(error))
-
-    // }
-
+   
 
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -70,8 +80,8 @@ const SignUp = () => {
                                 <label className="label">
                                     <span className="label-text">Photo URL</span>
                                 </label>
-                                <input type="text" name='photo' {...register("photo",{ required: true })}placeholder="Photo URL" className="input input-bordered" />
-                                {errors.photo && <span className='text-white bg-orange-600 text-center'>Photo is required</span>}
+                                <input type="text"  {...register("photoURL", { required: true })} placeholder="Photo URL" className="input input-bordered" />
+                                {errors.photoURL && <span className="text-red-600">Photo URL is required</span>}
                             </div>
                             <div className="form-control">
                                 <label className="label">
