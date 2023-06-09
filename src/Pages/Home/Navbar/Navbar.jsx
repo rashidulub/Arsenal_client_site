@@ -36,7 +36,7 @@ const Navbar = () => {
               <Link className="mr-5" to='/'>Home</Link>
               <Link className="mr-5" to='/instructor'>Instructor</Link>
               <Link className="mr-5" to='/classes'>Classes</Link>
-              <Link className="mr-5" to='/dashboard'>Dashboard</Link>
+              <Link className="mr-5" to='/dashboard/myclass'>Dashboard</Link>
            
                 
                 <p>

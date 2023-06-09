@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState, } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { Link } from 'react-router-dom';
-import { FaTrashAlt } from 'react-icons/fa';
+import { FaTrashAlt,FaWallet } from 'react-icons/fa';
 
 const Myclass = () => {
     const { user } = useContext(AuthContext)
@@ -14,26 +14,27 @@ const Myclass = () => {
             .then(data => SetClasses(data))
     }, [])
     return (
-        <div className='w-full'>
+        <div className='w-full '>
+             
             <div className="w-full">
                 
-                <div className="uppercase font-semibold h-[60px] flex justify-evenly items-center">
-                    <h3 className="text-3xl">Total Items: {classes.length}</h3>
+                <div className="uppercase font-semibold h-[60px] flex justify-evenly ">
+                    <h3 className="text-3xl">Total Classes: {classes.length}</h3>
                     
-                    <Link to="/dashboard/payment">
-                        <button className="btn btn-warning btn-sm">PAY</button>
-                    </Link>
+                    
                 </div>
                 <div className="overflow-x-auto w-full">
                     <table className="table w-full">
                         {/* head */}
-                        <thead>
-                            <tr>
+                        <thead className='font-bold'>
+                            <tr >
                                 <th>#</th>
-                                <th>Food</th>
-                                <th>Item Name</th>
+                                <th >Image</th>
+                                <th>Class Name</th>
                                 <th>Price</th>
-                                <th>Action</th>
+                                <th>Available Site</th>
+                                <th>Delete</th>
+                                <th>Pay</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -51,12 +52,16 @@ const Myclass = () => {
                                             </div>
                                         </div>
                                     </td>
-                                    <td>
+                                    <td className='text-xl font-bold'>
                                         {item.name}
                                     </td>
-                                    <td className="text-end">${item.price}</td>
+                                    <td className="font-bold">${item.price}</td>
+                                    <td className="font-bold text-2xl">{item.sit}</td>
                                     <td>
                                         <button  className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button>
+                                    </td>
+                                    <td>
+                                        <button  className="btn btn-ghost bg-blue-700  text-white"><FaWallet></FaWallet></button>
                                     </td>
                                 </tr>)
                             }
