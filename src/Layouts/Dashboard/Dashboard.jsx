@@ -1,7 +1,8 @@
 import React from 'react';
 import { NavLink, Outlet } from "react-router-dom";
-import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaUtensils, FaBook, FaUsers } from 'react-icons/fa';
+import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaUtensils, FaBook, FaUsers, FaBookmark } from 'react-icons/fa';
 import Navbar from '../../Pages/Home/Navbar/Navbar';
+import Footer from '../../Pages/Home/Footer/Footer';
 
 const Dashboard = () => {
     return (
@@ -9,7 +10,7 @@ const Dashboard = () => {
             <Navbar></Navbar>
             <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content flex flex-col items-center justify-center">
+                <div className="drawer-content bg-[#99f8fa] flex flex-col items-center justify-center">
                     {/* Page content here */}
                     <Outlet></Outlet>
                     <h1>holoo</h1>
@@ -17,7 +18,7 @@ const Dashboard = () => {
 
 
                 </div>
-                <div className="drawer-side bg-[#D1A054]">
+                <div className="drawer-side bg-[#ffb52b]">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80">
 
@@ -30,8 +31,9 @@ const Dashboard = () => {
                             <li><NavLink to="/dashboard/allusers"><FaUsers></FaUsers> All Users</NavLink></li>
                             
                         </> : <> */}
-                            <li><NavLink to="/dashboard/home"><FaHome></FaHome> My Selected Class</NavLink></li>
-                            <li><NavLink to="/dashboard/reservations"><FaCalendarAlt></FaCalendarAlt> Reservations</NavLink></li>
+                            <li><NavLink to="/dashboard/myclass"><FaBookmark></FaBookmark>My Selected Class</NavLink></li>
+                            <li><NavLink to="/dashboard/enroll"><FaCalendarAlt></FaCalendarAlt> Enroll Class</NavLink></li>
+                            <li><NavLink to="/dashboard/payment"><FaWallet></FaWallet> Payment</NavLink></li>
                             <li><NavLink to="/dashboard/history"><FaWallet></FaWallet> Payment History</NavLink></li>
                             
                         {/* </>
@@ -48,6 +50,7 @@ const Dashboard = () => {
 
             </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };
