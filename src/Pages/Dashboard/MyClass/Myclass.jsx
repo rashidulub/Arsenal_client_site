@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState, } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { Link } from 'react-router-dom';
 import { FaTrashAlt,FaWallet } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
 
 const Myclass = () => {
@@ -15,20 +16,44 @@ const Myclass = () => {
             .then(data => SetClasses(data))
     }, [])
 
-    const handleDelete = id =>{
-        const proceed = confirm ('are you sure want delete')
-        if(proceed){
-            fetch(`http://localhost:5000/classes/${id}`,{
-                method:'DELETE'
-            })
-            .then(res=>res.json())
-            .then(data=>{
-                console.log(data);
-            })
-        }
+    const handleDelete = _id => {
+        console.log(_id);
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+
+                fetch(`http://localhost:5000/classes/${_id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your Toy has been deleted.',
+                                'success'
+                            )
+                            
+                            const remaining = classes.filter(item => item._id !== _id);
+                            SetClasses(remaining)
+                            
+                        }
+                    })
+
+            }
+        })
     }
 
-
+    
     return (
         <div className='w-full mt-14 '>
              
@@ -55,15 +80,20 @@ const Myclass = () => {
                             </tr>
                         </thead>
                         <tbody>
+                            
                             {
                                 classes.map((item, index) => <tr
                                     key={item._id}
+                                    
+                                    
                                 >
+                                    
                                     <td>
                                         {index + 1}
                                     </td>
                                     <td>
                                         <div className="avatar">
+                                            
                                             <div className="mask mask-squircle w-12 h-12">
                                                 <img src={item.image} alt="Avatar Tailwind CSS Component" />
                                             </div>
@@ -75,7 +105,7 @@ const Myclass = () => {
                                     <td className="font-bold">${item.price}</td>
                                     <td className="font-bold text-2xl">{item.sit}</td>
                                     <td>
-                                        <button onClick={() => handleDelete(_id)}  className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button>
+                                        <button onClick={() => handleDelete(item._id)}  className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button>
                                     </td>
                                     <td>
                                         <button  className="btn btn-ghost bg-blue-700  text-white"><FaWallet></FaWallet></button>
