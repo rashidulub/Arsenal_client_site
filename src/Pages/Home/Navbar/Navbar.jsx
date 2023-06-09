@@ -59,7 +59,8 @@ const Navbar = () => {
             
              {
                user ? <>
-               <button type="submit" onClick={handleLogout} className="btn mr-5 ">Logout</button> <img className='w-16 rounded-full' src={user?.photoURL} alt="" />   </> : 
+               <img className='w-16 mr-4 rounded-full' src={user?.photoURL} alt="" />
+               <button type="submit" onClick={handleLogout} className="btn mr-5 ">Logout</button>    </> : 
                <>
                <Link className="mr-5" to='/login'><button type="submit" className="btn ">Login</button></Link>
                </>

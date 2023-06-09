@@ -3,6 +3,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import { Link } from 'react-router-dom';
 import { FaTrashAlt,FaWallet } from 'react-icons/fa';
 
+
 const Myclass = () => {
     const { user } = useContext(AuthContext)
     const [classes, SetClasses] = useState([])
@@ -13,17 +14,33 @@ const Myclass = () => {
             .then(res => res.json())
             .then(data => SetClasses(data))
     }, [])
+
+    const handleDelete = id =>{
+        const proceed = confirm ('are you sure want delete')
+        if(proceed){
+            fetch(`http://localhost:5000/classes/${id}`,{
+                method:'DELETE'
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                console.log(data);
+            })
+        }
+    }
+
+
     return (
-        <div className='w-full '>
+        <div className='w-full mt-14 '>
              
             <div className="w-full">
                 
                 <div className="uppercase font-semibold h-[60px] flex justify-evenly ">
-                    <h3 className="text-3xl">Total Classes: {classes.length}</h3>
+                <h3 className="text-3xl uppercase my   border-b-4 border-indigo-500 py-4">Selected Class</h3>
+                    
                     
                     
                 </div>
-                <div className="overflow-x-auto w-full">
+                <div className="overflow-x-auto mt-10 w-full">
                     <table className="table w-full">
                         {/* head */}
                         <thead className='font-bold'>
@@ -34,7 +51,7 @@ const Myclass = () => {
                                 <th>Price</th>
                                 <th>Available Site</th>
                                 <th>Delete</th>
-                                <th>Pay</th>
+                                <th>Payment</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -58,7 +75,7 @@ const Myclass = () => {
                                     <td className="font-bold">${item.price}</td>
                                     <td className="font-bold text-2xl">{item.sit}</td>
                                     <td>
-                                        <button  className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button>
+                                        <button onClick={() => handleDelete(_id)}  className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button>
                                     </td>
                                     <td>
                                         <button  className="btn btn-ghost bg-blue-700  text-white"><FaWallet></FaWallet></button>

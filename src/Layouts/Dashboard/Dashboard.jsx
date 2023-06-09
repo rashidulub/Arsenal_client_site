@@ -10,7 +10,7 @@ const Dashboard = () => {
             <Navbar></Navbar>
             <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content bg-[#99f8fa] flex flex-col items-center justify-center">
+                <div className="drawer-content bg-[#99f8fa] flex flex-col items-center ">
                     {/* Page content here */}
                     <Outlet></Outlet>
                     
