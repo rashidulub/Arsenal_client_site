@@ -13,7 +13,7 @@ const Dashboard = () => {
                 <div className="drawer-content bg-[#99f8fa] flex flex-col items-center justify-center">
                     {/* Page content here */}
                     <Outlet></Outlet>
-                    <h1>holoo</h1>
+                    
                     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
 
