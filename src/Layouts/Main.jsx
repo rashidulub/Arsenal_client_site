@@ -8,6 +8,7 @@ const Main = () => {
         <div className='bg-blue-950'>
             <Navbar></Navbar>
             <Outlet></Outlet>
+            
             <Footer></Footer>
         </div>
     );
