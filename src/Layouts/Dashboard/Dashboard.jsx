@@ -3,11 +3,14 @@ import { NavLink, Outlet } from "react-router-dom";
 import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaUtensils, FaBook, FaUsers, FaBookmark } from 'react-icons/fa';
 import Navbar from '../../Pages/Home/Navbar/Navbar';
 import Footer from '../../Pages/Home/Footer/Footer';
+import useAdmin from '../../hooks/UseAdmin/UseAdmin';
 
 const Dashboard = () => {
-    // TODO  admin load data
-    const isAdmin = true
-    const isInstructor = true
+    // // TODO  admin load data
+    // const isAdmin = true
+    const isInstructor = false
+
+    const [isAdmin]= useAdmin()
 
 
     return (
