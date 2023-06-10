@@ -4,11 +4,15 @@ import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaUtensils, FaBook, Fa
 import Navbar from '../../Pages/Home/Navbar/Navbar';
 import Footer from '../../Pages/Home/Footer/Footer';
 import useAdmin from '../../hooks/UseAdmin/UseAdmin';
+import useInstructor from '../../hooks/UseInstructor/UseInstructor';
 
 const Dashboard = () => {
-    // // TODO  admin load data
+    // // TODO  admin load data 
     // const isAdmin = true
-    const isInstructor = false
+    // const isInstructor = false
+
+    
+    const [isInstructor]= useInstructor()
 
     const [isAdmin]= useAdmin()
 
