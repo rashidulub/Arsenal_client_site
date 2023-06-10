@@ -5,6 +5,7 @@ import { app } from '../../Fairbase/Firebase.config';
 import { useContext } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
 
 const Login = () => {
     const auth = getAuth(app)
@@ -43,14 +44,14 @@ const Login = () => {
     }
    
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero  min-h-screen bg-base-200">
              
             <div className="hero-content flex-col lg:flex-row">
                 <div className="w-1/2 mr-12">
                     <img className='rounded-full' src={img} alt="" />
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <div className="card-body bg-blue-400">
+                    <div className="card-body  bg-blue-400">
                         <h1 className="text-3xl text-center font-bold">Login</h1>
                         <form onSubmit={handleLogin}>
                             <div className="form-control">
@@ -70,7 +71,8 @@ const Login = () => {
                                 <input className="btn btn-primary" type="submit" value="Login" />
                             </div>
                             <div className='text-center'>
-                            <button  className="btn my-2  btn-outline btn-warning"> Login with Google</button>
+                                <SocialLogin></SocialLogin>
+                            
                             </div>
                             
                         </form>
