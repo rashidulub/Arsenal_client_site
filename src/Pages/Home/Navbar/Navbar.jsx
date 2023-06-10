@@ -36,15 +36,10 @@ const Navbar = () => {
               <Link className="mr-5" to='/'>Home</Link>
               <Link className="mr-5" to='/instructor'>Instructor</Link>
               <Link className="mr-5" to='/classes'>Classes</Link>
-              <Link className="mr-5" to='/dashboard/myclass'>Dashboard</Link>
+              <Link className="mr-5" to='/dashboard/design'>Dashboard</Link>
            
                 
-                <p>
-                  <Link  className="mr-5" to='/mytoy'>My Toys</Link>
-                  <Link className="mr-5" to='/addtoy'>Add Toy</Link>
-                  <Link className="mr-5" to='/blog'>Blog</Link>
-                  
-                </p>
+                
                   
              {/* {
                user ? <></> : <></>

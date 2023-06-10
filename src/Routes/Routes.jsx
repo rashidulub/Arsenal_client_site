@@ -16,6 +16,8 @@ import Payment from "../Layouts/Dashboard/Payment/Payment";
 import PaymentHistory from "../Layouts/Dashboard/PaymentHistory";
 import Enroll from "../Layouts/Dashboard/Enroll";
 import AllUsers from "../Layouts/Dashboard/AllUsers/AllUsers";
+import Design from "../Pages/Design/Design";
+import AddClass from "../Layouts/Dashboard/AddClass/AddClass";
 
 
 
@@ -76,7 +78,16 @@ export const router = createBrowserRouter([
     {
       path:'allUsers',
       element:<AllUsers></AllUsers>
+    },
+    {
+      path:'design',
+      element:<Design></Design>
+    },
+    {
+      path:'addClass',
+      element:<AddClass></AddClass>
     }
+    
 
   ]
   }
