@@ -5,6 +5,11 @@ import Navbar from '../../Pages/Home/Navbar/Navbar';
 import Footer from '../../Pages/Home/Footer/Footer';
 
 const Dashboard = () => {
+    // TODO  admin load data
+    const isAdmin = true
+    const isInstructor = true
+
+
     return (
         <div>
             <Navbar></Navbar>
@@ -22,22 +27,37 @@ const Dashboard = () => {
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80">
 
-                    {/* {
-                        isAdmin ? <>
-                            <li><NavLink to="/dashboard/home"><FaHome></FaHome> Admin Home</NavLink></li>
-                            <li><NavLink to="/dashboard/addItem"> <FaUtensils></FaUtensils> Add an Item</NavLink></li>
-                            <li><NavLink to="/dashboard/manageitems"><FaWallet></FaWallet> Manage Items</NavLink></li>
-                            <li><NavLink to="/dashboard/history"><FaBook></FaBook> Manage Bookings</NavLink></li>
-                            <li><NavLink to="/dashboard/allusers"><FaUsers></FaUsers> All Users</NavLink></li>
+
+
+                    { isAdmin ?
+                     (
+                        <div> 
+                             <li><NavLink to="/dashboard/myclass"><FaBookmark></FaBookmark>Admin Home</NavLink></li>
+                            <li><NavLink to="/dashboard/enroll"><FaCalendarAlt></FaCalendarAlt>Manage Classes</NavLink></li>
                             
-                        </> : <> */}
+                            <li><NavLink to="/dashboard/allUsers"><FaWallet></FaWallet> Manage Users</NavLink></li>
+                        </div>
+                    ) :
+                     isInstructor ? 
+                     (
+                        <div>
+                            <li><NavLink to="/dashboard/myclass"><FaBookmark></FaBookmark>Add a Class</NavLink></li>
+                            <li><NavLink to="/dashboard/enroll"><FaCalendarAlt></FaCalendarAlt>My Class</NavLink></li>
+                            
+                            
+                        </div>
+                    ): (
+                        <div> 
                             <li><NavLink to="/dashboard/myclass"><FaBookmark></FaBookmark>My Selected Class</NavLink></li>
                             <li><NavLink to="/dashboard/enroll"><FaCalendarAlt></FaCalendarAlt> Enroll Class</NavLink></li>
                             
                             <li><NavLink to="/dashboard/history"><FaWallet></FaWallet> Payment History</NavLink></li>
-                            
-                        {/* </>
-                    } */}
+                        </div>
+                    )
+
+                    }
+
+                    
 
 
 

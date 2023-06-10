@@ -15,6 +15,7 @@ import Myclass from "../Pages/Dashboard/MyClass/Myclass";
 import Payment from "../Layouts/Dashboard/Payment/Payment";
 import PaymentHistory from "../Layouts/Dashboard/PaymentHistory";
 import Enroll from "../Layouts/Dashboard/Enroll";
+import AllUsers from "../Layouts/Dashboard/AllUsers/AllUsers";
 
 
 
@@ -71,7 +72,12 @@ export const router = createBrowserRouter([
     {
       path:'enroll',
       element:<Enroll></Enroll>
+    },
+    {
+      path:'allUsers',
+      element:<AllUsers></AllUsers>
     }
+
   ]
   }
   
