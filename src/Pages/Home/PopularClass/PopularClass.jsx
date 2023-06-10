@@ -18,7 +18,7 @@ const PopularClass = () => {
                 <p className="text-orange-400 font-bold mb-2">---Visit This Section---</p>
                 <h3 className="text-3xl uppercase text-white  border-b-4 border-indigo-500 py-4">Popular Classes</h3>
             </div>
-           <div className="grid grid-cols-1 lg:px-10 lg:gap-5 lg:grid-cols-3 my-20 ">
+           <div className="grid grid-cols-1 lg:px-10 lg:gap-10 lg:grid-cols-3 my-20 ">
            {
                 menu.map(item=> <ClassItem
                 key={item._id}

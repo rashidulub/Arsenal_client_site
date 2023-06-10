@@ -12,6 +12,9 @@ import Secret from "../Shared/Secret/Secret";
 import Classes from "../Pages/Classes/Classes";
 import Dashboard from "../Layouts/Dashboard/Dashboard";
 import Myclass from "../Pages/Dashboard/MyClass/Myclass";
+import Payment from "../Layouts/Dashboard/Payment/Payment";
+import PaymentHistory from "../Layouts/Dashboard/PaymentHistory";
+import Enroll from "../Layouts/Dashboard/Enroll";
 
 
 
@@ -56,7 +59,20 @@ export const router = createBrowserRouter([
         path:'myclass',
         element:<Myclass></Myclass>
 
-    }]
+    },
+    {
+      path:'payment',
+      element:<Payment></Payment>
+    },
+    {
+      path:'history',
+      element:<PaymentHistory></PaymentHistory>
+    },
+    {
+      path:'enroll',
+      element:<Enroll></Enroll>
+    }
+  ]
   }
   
 ]);

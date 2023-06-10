@@ -8,7 +8,9 @@ import Swal from 'sweetalert2';
 const Myclass = () => {
     const { user } = useContext(AuthContext)
     const [classes, SetClasses] = useState([])
+    
     const url = `http://localhost:5000/classes?email=${user?.email}`
+
 
     useEffect(() => {
         fetch(url)
@@ -108,7 +110,8 @@ const Myclass = () => {
                                         <button onClick={() => handleDelete(item._id)}  className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button>
                                     </td>
                                     <td>
-                                        <button  className="btn btn-ghost bg-blue-700  text-white"><FaWallet></FaWallet></button>
+                                        <Link to='/dashboard/payment'>
+                                        <button  className="btn btn-ghost bg-blue-700  text-white"><FaWallet></FaWallet></button></Link>
                                     </td>
                                 </tr>)
                             }
