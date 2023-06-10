@@ -18,6 +18,8 @@ import Enroll from "../Layouts/Dashboard/Enroll";
 import AllUsers from "../Layouts/Dashboard/AllUsers/AllUsers";
 import Design from "../Pages/Design/Design";
 import AddClass from "../Layouts/Dashboard/AddClass/AddClass";
+import AdminRoute from "./AdminRoute";
+import ManageClass from "../Pages/Dashboard/ManageClass/Manageclass";
 
 
 
@@ -86,6 +88,11 @@ export const router = createBrowserRouter([
     {
       path:'addClass',
       element:<AddClass></AddClass>
+    }
+    ,
+    {
+      path:'manageClass',
+      element:<AdminRoute><ManageClass></ManageClass></AdminRoute>
     }
     
 

@@ -92,6 +92,7 @@ const AllUsers = () => {
             </table>
         </div>
     </div>
+    
     );
 };
 

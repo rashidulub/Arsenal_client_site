@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../Pages/Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const AddClass = () => {
     const { user } = useContext(AuthContext)
 
 
     const handleAddClass = event => {
+        
         event.preventDefault();
 
         const form = event.target;
@@ -18,9 +20,28 @@ const AddClass = () => {
 
         
 
-        const newClass = { name, price, seats, image }
+        const newClass = { name, price: parseFloat(price), seats, image }
 
-        console.log(newClass);
+        fetch('http://localhost:5000/addClass', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newClass)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.insertedId){
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Class Add Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                      })
+                }
+
+            })
     }
 
 
