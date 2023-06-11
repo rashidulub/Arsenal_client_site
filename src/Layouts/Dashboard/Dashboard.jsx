@@ -8,13 +8,13 @@ import useInstructor from '../../hooks/UseInstructor/UseInstructor';
 
 const Dashboard = () => {
     // // TODO  admin load data 
-    // const isAdmin = true
-    const isInstructor = true
+    const isAdmin = true
+    // const isInstructor = true
 
 
     // const [isInstructor] = useInstructor()
 
-    const [isAdmin] = useAdmin()
+    // const [isAdmin] = useAdmin()
 
 
     return (
@@ -42,9 +42,11 @@ const Dashboard = () => {
                             (
                                 <div>
 
-                                    <li><NavLink to="/dashboard/manageClass"><FaBookmark></FaBookmark>Manage Classes</NavLink></li>
+                                    
 
                                     <li><NavLink to="/dashboard/allUsers"><FaWallet></FaWallet> Manage Users</NavLink></li>
+
+                                    <li><NavLink to="/dashboard/manageClass"><FaBookmark></FaBookmark>Manage Classes</NavLink></li>
                                 </div>
                             ) :
                             isInstructor ?
