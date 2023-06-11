@@ -63,11 +63,11 @@ const InstructorClass = () => {
 
                                         <td>
                                             <div>
-                                                
-                                               
+
+
                                                 <div className='mt-1'>
-                                                     <button  className=" rounded-full w-28 font-bold bg-violet-950 py-2  text-white text-1xl">{addClass.role? addClass.role : 'pending.... '} </button>
-                                                     
+                                                    <button className=" rounded-full w-28 font-bold bg-violet-950 py-2  text-white text-1xl">{addClass.role ? addClass.role : 'pending.... '} </button>
+
                                                 </div>
 
                                             </div>

@@ -40,6 +40,13 @@ const Navbar = () => {
           </div>
           <img className="w-12 rounded-full mr-0" src={logo} alt="" />
           <a className="btn btn-ghost normal-case text-3xl">Arsenal</a>
+          <li> 
+            <label className="swap swap-rotate">
+              <input onClick={toggleTheme} type="checkbox" />
+              <div className="swap-on bg-green-600 rounded-full font-bold p-2">DARK</div>
+              <div className="swap-off font-bold bg-orange-400 rounded-full p-2">LIGHT</div>
+            </label>
+            </li>
         </div>
         <div className="navbar-center  hidden lg:flex">
           <ul className="menu menu-horizontal  px-1">
@@ -59,13 +66,7 @@ const Navbar = () => {
         <div className="navbar-end">
 
           
-        <li> 
-            <label className="swap swap-rotate">
-              <input onClick={toggleTheme} type="checkbox" />
-              <div className="swap-on bg-green-600 rounded-full font-bold p-2">DARKMODE</div>
-              <div className="swap-off font-bold bg-orange-400 rounded-full p-2">LIGHTMODE</div>
-            </label>
-            </li>
+        
 
 
           {

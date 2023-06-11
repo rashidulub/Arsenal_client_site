@@ -49,6 +49,7 @@ const Dashboard = () => {
                                     <li><NavLink to="/dashboard/manageClass"><FaBookmark></FaBookmark>Manage Classes</NavLink></li>
                                 </div>
                             ) :
+                            
                             isInstructor ?
                                 (
                                     <div>
