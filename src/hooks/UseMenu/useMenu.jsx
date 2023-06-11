@@ -10,7 +10,7 @@ const useMenu = () => {
         }
     })
 
-    return [menu, loading, refetch]
+    return [menu, refetch]
 }
 
 export default useMenu;

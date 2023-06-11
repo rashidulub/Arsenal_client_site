@@ -2,13 +2,78 @@ import React, { useContext } from 'react';
 import useMenu from '../../../hooks/UseMenu/useMenu';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 
 const ManageClass = () => {
-    const [menu] = useMenu();
-    console.log('menuuuu', menu);
+
+
+    const [menu,refetch] = useMenu();
     const { user } = useContext(AuthContext)
-    console.log('userrrr', user);
+
+
+    const handleClassApproved = addClass => {
+        fetch(`http://localhost:5000/addClass/Approved/${addClass._id}`, {
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount) {
+                    refetch();
+
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: ' is an Approved Now!',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
+    }
+    const handleClassDeny = addClass => {
+        fetch(`http://localhost:5000/addClass/Deny/${addClass._id}`, {
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount) {
+                     refetch();
+
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: ' is an Deny Now!',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
+    }
+    const handleClassFeedback = addClass => {
+        fetch(`http://localhost:5000/addClass/Feedback/${addClass._id}`, {
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount) {
+                     refetch();
+
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Feedback done...!',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
+    }
+
+
     return (
         <div>
             <div className='w-full mt-14 '>
@@ -41,7 +106,7 @@ const ManageClass = () => {
                             </thead>
                             <tbody>
                                 {
-                                    menu.map((menus, index) => <tr key={menus._id}
+                                    menu.map((addClass) => <tr key={addClass._id}
 
                                     >
 
@@ -50,34 +115,45 @@ const ManageClass = () => {
                                             <div className="avatar">
 
                                                 <div className="mask mask-squircle w-12 h-12">
-                                                    <img src={menus.image} alt="Avatar Tailwind CSS Component" />
+                                                    <img src={addClass.image} alt="Avatar Tailwind CSS Component" />
                                                 </div>
                                             </div>
                                         </td>
                                         <td className=' text-sm font-bold'>
-                                            {menus.name}
+                                            {addClass.name}
                                         </td>
                                         <td className='text-xl font-bold'>
-                                            {menus.seats}
+                                            {addClass.seats}
                                         </td>
 
                                         <td className='text-xl font-bold'>
-                                            ${menus.price}
+                                            ${addClass.price}
                                         </td>
 
                                         <td>
-                                            <div >
-                                                <Link to='/dashboard'>
-                                                    <button className=" h-5 w-28 bg-green-600  text-white">Approved</button></Link>
-                                            </div>
-                                            <div className='my-2'>
-                                                <Link to='/dashboard'>
-                                                    <button className=" h-5 w-28 bg-red-700  text-white">Deney</button></Link>
-                                            </div>
                                             <div>
-                                                <Link to='/dashboard'>
-                                                    <button className=" h-5 w-28 bg-blue-700  text-white">FeedBack</button></Link>
+                                                <div>
+                                                    {addClass.role === 'Approved' ? 'Approved' :
+                                                        <button onClick={() => handleClassApproved(addClass)} className=" rounded-full w-28 font-bold bg-green-700 py-2 text-white">Approved</button>
+                                                    }
+                                                </div>
+                                                <div className='mt-1'>
+                                                    {addClass.role === 'Deny' ? 'Deny' :
+                                                        <button onClick={() => handleClassDeny(addClass)} className=" rounded-full w-28 font-bold bg-orange-600 py-2 text-white">Deny</button>
+                                                    }
+                                                </div>
+                                                <div className='mt-1'>
+                                                   
+                                                    {addClass.role === 'Feedback' ? 'Feedback' :
+                                                        <button onClick={() => handleClassFeedback(addClass)} className=" rounded-full w-28 font-bold bg-blue-950 py-2  text-white">
+                                                            
+                                                            Feedback</button>
+                                                    }
+                                                </div>
+                                                
                                             </div>
+                                           
+
                                         </td>
                                     </tr>)
                                 }
