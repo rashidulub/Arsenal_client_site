@@ -4,7 +4,7 @@ import InstructorsItem from '../InstructorsItem/InstructorsItem';
 const PopularInstructors = () => {
     const [menu, setMenu] = useState([]);
      useEffect(()=>{
-        fetch('http://localhost:5000/menu')
+        fetch('https://summer-camp-school-server-kappa.vercel.app/menu')
         .then(res=>res.json())
         .then(data=> {
             const Instructor =data.filter(item=>item.category ==='popular_class');

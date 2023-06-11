@@ -22,7 +22,7 @@ const AddClass = () => {
 
         const newClass = { name, price: parseFloat(price), seats, image }
 
-        fetch('http://localhost:5000/addClass', {
+        fetch('https://summer-camp-school-server-kappa.vercel.app/addClass', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

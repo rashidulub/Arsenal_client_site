@@ -13,7 +13,7 @@ const ManageClass = () => {
 
 
     const handleClassApproved = addClass => {
-        fetch(`http://localhost:5000/addClass/Approved/${addClass._id}`, {
+        fetch(`https://summer-camp-school-server-kappa.vercel.app/addClass/Approved/${addClass._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -33,7 +33,7 @@ const ManageClass = () => {
             })
     }
     const handleClassDeny = addClass => {
-        fetch(`http://localhost:5000/addClass/Deny/${addClass._id}`, {
+        fetch(`https://summer-camp-school-server-kappa.vercel.app/addClass/Deny/${addClass._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -53,7 +53,7 @@ const ManageClass = () => {
             })
     }
     const handleClassFeedback = addClass => {
-        fetch(`http://localhost:5000/addClass/Feedback/${addClass._id}`, {
+        fetch(`https://summer-camp-school-server-kappa.vercel.app/addClass/Feedback/${addClass._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())

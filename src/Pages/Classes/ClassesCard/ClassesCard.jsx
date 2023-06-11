@@ -16,7 +16,7 @@ const ClassesCard = ({ item }) => {
         console.log(item);
         if(user && user.email){
             const cartItem = {menuItemId: _id, name, sit, image, price, email: user.email}
-            fetch('http://localhost:5000/classes', {
+            fetch('https://summer-camp-school-server-kappa.vercel.app/classes', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

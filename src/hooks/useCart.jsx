@@ -35,7 +35,7 @@ export default useCart;
 //         queryKey: ['classes', user.email],
         
 //         queryFn: async () => {
-//             const res = await fetch(`http://localhost:5000/classes?email=${user?.email}`)
+//             const res = await fetch(`https://summer-camp-school-server-kappa.vercel.app/classes?email=${user?.email}`)
             
 //             return res.data;
 //         },

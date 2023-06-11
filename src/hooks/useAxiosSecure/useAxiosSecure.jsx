@@ -5,12 +5,12 @@ import { AuthContext } from '../../Pages/Provider/AuthProvider';
 
 
 const axiosSecure = axios.create({
-  baseURL: 'http://localhost:5000', 
+  baseURL: 'https://summer-camp-school-server-kappa.vercel.app',
 });
 
 const useAxiosSecure = () => {
-  const { logOut } = useContext(AuthContext); 
-  const navigate = useNavigate(); 
+  const { logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axiosSecure.interceptors.request.use((config) => {
