@@ -1,5 +1,6 @@
 import learn1 from '../../../assets/slider/slider4.png'
 import { Fade, Slide } from "react-awesome-reveal";
+
 const LearnSec = () => {
   return (
     <div>

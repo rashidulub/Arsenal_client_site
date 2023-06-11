@@ -9,7 +9,7 @@ import useInstructor from '../../hooks/UseInstructor/UseInstructor';
 const Dashboard = () => {
     // // TODO  admin load data 
     // const isAdmin = false    
-    // const isInstructor = true
+    // const isInstructor = false
 
 
     const [isInstructor] = useInstructor()

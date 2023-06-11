@@ -43,8 +43,8 @@ const Navbar = () => {
           <li> 
             <label className="swap swap-rotate">
               <input onClick={toggleTheme} type="checkbox" />
-              <div className="swap-on bg-green-600 rounded-full font-bold p-2">DARK</div>
-              <div className="swap-off font-bold bg-orange-400 rounded-full p-2">LIGHT</div>
+              <div className="swap-on  rounded-full bg-orange-400 font-bold p-2">LIGHT</div>
+              <div className="swap-off font-bold bg-green-600  rounded-full p-2">DARK</div>
             </label>
             </li>
         </div>

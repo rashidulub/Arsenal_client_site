@@ -22,6 +22,7 @@ import AdminRoute from "./AdminRoute";
 import ManageClass from "../Pages/Dashboard/ManageClass/Manageclass";
 import InstructorCard from "../Pages/InstructorCard/InstructorCard";
 import InstructorClass from "../Layouts/Dashboard/InstructorClass/InstructorClass";
+import InstructorRoute from "./InstructorRoute/InstructorRoute";
 
 
 
@@ -98,7 +99,7 @@ export const router = createBrowserRouter([
     },
     {
       path:'instructorClass',
-      element:<InstructorClass></InstructorClass>
+      element:<InstructorRoute><InstructorClass></InstructorClass></InstructorRoute>
     }
     
 

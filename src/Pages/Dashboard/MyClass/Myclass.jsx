@@ -83,6 +83,7 @@ const Myclass = () => {
                         </thead>
                         <tbody>
                             
+                            
                             {
                                 classes.map((item, index) => <tr
                                     key={item._id}
@@ -110,7 +111,7 @@ const Myclass = () => {
                                         <button onClick={() => handleDelete(item._id)}  className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button>
                                     </td>
                                     <td>
-                                        <Link to='/dashboard/payment'>
+                                        <Link state={item} to='/dashboard/payment'>
                                         <button  className="btn btn-ghost bg-blue-700  text-white"><FaWallet></FaWallet></button></Link>
                                     </td>
                                 </tr>)

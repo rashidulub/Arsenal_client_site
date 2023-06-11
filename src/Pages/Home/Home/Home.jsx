@@ -3,7 +3,6 @@ import Banner from '../Banner/Banner';
 import PopularClass from '../PopularClass/PopularClass';
 import PopularInstructors from '../PopularInstructors/PopularInstructors';
 import LearnSec from '../LearnSec/Learnsec';
-import ReactAwesomeReveal from '../ReactAwesomeReveal/ReactAwesomeReveal';
 const Home = () => {
     
     return (
@@ -12,7 +11,7 @@ const Home = () => {
             <PopularClass></PopularClass>
             <LearnSec></LearnSec>
             <PopularInstructors></PopularInstructors>
-            <ReactAwesomeReveal></ReactAwesomeReveal>
+            
         </div>
     );
 };
