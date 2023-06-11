@@ -46,7 +46,7 @@ const AddClass = () => {
 
 
     return (
-        <div className='w-full bg-teal-500 p-24'>
+        <div className='w-full h-full bg-teal-500 p-24'>
             <h1 className='text-blue-950 font-bold text-2xl'>Instructor Name: {user.displayName}</h1>
             <h1 className='text-green-950 font-bold my-3 text-xl'>Instructor Email: {user.email}</h1>
             <div className=" my-14 ">

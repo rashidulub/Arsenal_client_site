@@ -8,8 +8,8 @@ import useInstructor from '../../hooks/UseInstructor/UseInstructor';
 
 const Dashboard = () => {
     // // TODO  admin load data 
-    const isAdmin = true
-    // const isInstructor = true
+    const isAdmin = false    
+    const isInstructor = true
 
 
     // const [isInstructor] = useInstructor()
@@ -53,7 +53,7 @@ const Dashboard = () => {
                                 (
                                     <div>
                                         <li><NavLink to="/dashboard/addClass"><FaBookmark></FaBookmark>Add a Class</NavLink></li>
-                                        <li><NavLink to="/dashboard/enroll"><FaCalendarAlt></FaCalendarAlt>My Class</NavLink></li>
+                                        <li><NavLink to="/dashboard/instructorClass"><FaCalendarAlt></FaCalendarAlt>My Class</NavLink></li>
 
 
                                     </div>

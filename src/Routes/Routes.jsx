@@ -20,6 +20,8 @@ import Design from "../Pages/Design/Design";
 import AddClass from "../Layouts/Dashboard/AddClass/AddClass";
 import AdminRoute from "./AdminRoute";
 import ManageClass from "../Pages/Dashboard/ManageClass/Manageclass";
+import InstructorCard from "../Pages/InstructorCard/InstructorCard";
+import InstructorClass from "../Layouts/Dashboard/InstructorClass/InstructorClass";
 
 
 
@@ -93,6 +95,10 @@ export const router = createBrowserRouter([
     {
       path:'manageClass',
       element:<AdminRoute><ManageClass></ManageClass></AdminRoute>
+    },
+    {
+      path:'instructorClass',
+      element:<InstructorClass></InstructorClass>
     }
     
 

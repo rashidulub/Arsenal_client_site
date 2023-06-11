@@ -75,8 +75,8 @@ const ManageClass = () => {
 
 
     return (
-        <div>
-            <div className='w-full mt-14 '>
+        <div className='bg-cyan-500 h-full w-full '>
+            <div className='mt-14 '>
 
                 <div className="w-full">
 
@@ -119,7 +119,7 @@ const ManageClass = () => {
                                                 </div>
                                             </div>
                                         </td>
-                                        <td className=' text-sm font-bold'>
+                                        <td className=' text-xl font-bold'>
                                             {addClass.name}
                                         </td>
                                         <td className='text-xl font-bold'>
@@ -134,7 +134,7 @@ const ManageClass = () => {
                                             <div>
                                                 <div>
                                                     {addClass.role === 'Approved' ? 'Approved' :
-                                                        <button onClick={() => handleClassApproved(addClass)} className=" rounded-full w-28 font-bold bg-green-700 py-2 text-white">Approved</button>
+                                                        <button onClick={() => handleClassApproved(addClass)} className=" rounded-full w-28 font-bold bg-green-900 py-2 text-white">Approved</button>
                                                     }
                                                 </div>
                                                 <div className='mt-1'>
