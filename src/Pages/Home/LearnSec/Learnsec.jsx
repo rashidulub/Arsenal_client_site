@@ -12,9 +12,9 @@ const LearnSec = () => {
         <div className="hero-content flex-col lg:flex-row-reverse  p-10 lg:px-20">
           <img src={learn1} className="lg:max-w-sm  mr-16 lg:rounded-full shadow-2xl" />
           <div>
-            <Slide>
-              <h1 className="text-5xl font-bold  text-yellow-500">Lets Start!</h1>
-            </Slide>
+              <Slide>
+                <h1 className="text-5xl font-bold  text-yellow-500">Lets Start!</h1>
+              </Slide>
 
             <Fade delay={1e3}  damping={1e-1}>
 
