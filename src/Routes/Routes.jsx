@@ -23,6 +23,7 @@ import ManageClass from "../Pages/Dashboard/ManageClass/Manageclass";
 import InstructorCard from "../Pages/InstructorCard/InstructorCard";
 import InstructorClass from "../Layouts/Dashboard/InstructorClass/InstructorClass";
 import InstructorRoute from "./InstructorRoute/InstructorRoute";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 
 
@@ -30,6 +31,7 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement:<ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
