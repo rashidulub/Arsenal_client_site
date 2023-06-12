@@ -76,7 +76,7 @@ const Login = () => {
                             </div>
                             
                         </form>
-                        <p className='my-4 text-center'>New to Toy Market Place <Link className='text-orange-600 font-bold' to="/signup">Sign Up</Link> </p>
+                        <p className='my-4 text-center'>New to Arsenal Sports Club <Link className='text-orange-600 font-bold' to="/signup">Sign Up</Link> </p>
                     </div>
                 </div>
             </div>
