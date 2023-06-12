@@ -23,9 +23,9 @@ const Navbar = () => {
   }
   return (
     <div>
-      <div className="navbar    bg-opacity-50 text-white max-w-screen-xl bg-neutral ">
+      <div className="navbar    bg-opacity-50 text-white max-w-screen-xl bg-neutral ">  
         <div className="navbar-start">
-          <div className="dropdown">
+          <div className="dropdown fixed z-10 opacity-100 rounded-full bg-black">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
             </label>
@@ -33,17 +33,27 @@ const Navbar = () => {
               <li><Link to='/'>Home</Link></li>
               <li ><Link to='/instructor'>Instructor</Link></li>
               <li > <Link className="mr-5" to='/classes'>Classes</Link></li>
-              <li ><Link to='/addtoy'>Add Toy</Link></li>
-              <li><Link to='/login'>Login</Link></li>
+              
+              <li><Link className="mr-5" to='/dashboard/design'>Dashboard</Link></li>
+              
+              {
+            user ? <>
+              <img className='w-16 mr-4     rounded-full' src={user?.photoURL} alt="" />
+              <button type="submit" onClick={handleLogout} className="btn mr-5 ">Logout</button>    </> :
+              <>
+                <Link className="mr-5" to='/login'><button type="submit" className="btn ">Login</button></Link>
+              </>
+          }
+
 
             </ul>
           </div>
-          <img className="w-12 rounded-full mr-0" src={logo} alt="" />
-          <a className="btn btn-ghost normal-case text-3xl">Arsenal</a>
-          <li> 
+          <img className="w-12  rounded-full mr-0" src={logo} alt="" />
+          <a className="btn btn-ghost normal-case lg:text-3xl">Arsenal</a>
+          <li className=''> 
             <label className="swap swap-rotate">
               <input onClick={toggleTheme} type="checkbox" />
-              <div className="swap-on  rounded-full bg-orange-400 font-bold p-2">LIGHT</div>
+              <div className="swap-on   rounded-full bg-orange-400 font-bold p-2">LIGHT</div>
               <div className="swap-off font-bold bg-green-600  rounded-full p-2">DARK</div>
             </label>
             </li>
@@ -71,7 +81,7 @@ const Navbar = () => {
 
           {
             user ? <>
-              <img className='w-16 mr-4 rounded-full' src={user?.photoURL} alt="" />
+              <img className='w-16 mr-4     rounded-full' src={user?.photoURL} alt="" />
               <button type="submit" onClick={handleLogout} className="btn mr-5 ">Logout</button>    </> :
               <>
                 <Link className="mr-5" to='/login'><button type="submit" className="btn ">Login</button></Link>
